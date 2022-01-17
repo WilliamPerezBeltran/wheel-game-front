@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import Wheel from './components/wheel';
 import './App.css';
 
 function App() {
+  const [places, setPlaces] = useState(['Option 1','Option 2','Option 3','Option 4','Option 5','Option 6','Option 7','Option 8','Option 9','Option 10']);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <h1>Items</h1>
+        <Wheel items={places} />
+      </div>
   );
 }
 
 export default App;
+
