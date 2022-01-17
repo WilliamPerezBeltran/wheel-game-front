@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './index.css';
+import "./index.css";
 
 export default class Wheel extends React.Component {
   constructor(props) {
@@ -29,22 +29,29 @@ export default class Wheel extends React.Component {
     const { items } = this.props;
 
     const wheelVars = {
-      '--nb-item': items.length,
-      '--selected-item': selectedItem,
+      "--nb-item": items.length,
+      "--selected-item": selectedItem,
     };
-    const spinning = selectedItem !== null ? 'spinning' : '';
+    const spinning = selectedItem !== null ? "spinning" : "";
 
     return (
       <div className="wheel-container">
-
-        <div className={`wheel ${spinning}`} style={wheelVars} onClick={this.selectItem}>
+        <div
+          className={`wheel ${spinning}`}
+          style={wheelVars}
+          onClick={this.selectItem}
+        >
           {items.map((item, index) => (
-            <div className="wheel-item" key={index} style={{ '--item-nb': index }}>
+            <div
+              className="wheel-item"
+              key={index}
+              style={{ "--item-nb": index }}
+            >
               {item}
             </div>
           ))}
         </div>
-         <p>{selectedItem}</p>
+        <p>{selectedItem}</p>
       </div>
     );
   }
